@@ -7,7 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection('mysql://by2g1v148ik5lvd7x45z:pscale_pw_kMuRl5zESQqB2IKmuo9HNQoiuNUlaNUHhOW0pG0vuu7@aws.connect.psdb.cloud/project?ssl={"rejectUnauthorized":true}');
-
+app.get("/", (req, res) => {
+ res.send("555555")
+});
 app.get("/house", (req, res) => {
   db.query("SELECT * FROM house", (err, result) => {
     if (err) {
